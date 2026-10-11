@@ -1,0 +1,41 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# PyInstaller / Packaging artifacts
+build/
+dist/
+*.manifest
+*.spec
+
+# Testing / Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor / IDE configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Temporary outputs & logs
+*.log
+*.pdf
+test_*.json
+pdf_pages_config.json
