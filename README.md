@@ -129,7 +129,7 @@ python -m PyInstaller --onefile --noconsole --clean --icon=app.ico --add-data "a
 ## 7. ライセンス
 
 - **PDFMaker 本ツール**: [MIT License](LICENSE)
-- **サードパーティ・依存ライブラリ**:
-  - **ReportLab PDF Library**: BSD License (Copyright © 2000-2025, ReportLab Inc.)
-  - **Python Standard Library**: Python Software Foundation License
+- **サードパーティ・依存OSSのライセンス告知**:
+  - 本ツールに含まれる、または開発・ビルド時に利用されるすべてのサードパーティ製オープンソースソフトウェア（ReportLab, Pillow, PyInstaller, Python標準ライブラリ, pytest 等）のライセンス条文および著作権表示については、[NOTICE.md](NOTICE.md) をご参照ください。
+
 
