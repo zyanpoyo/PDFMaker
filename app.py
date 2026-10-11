@@ -16,6 +16,7 @@ from tkinter import ttk, messagebox, filedialog
 import traceback
 
 from pdfcore import (
+    __version__,
     AVAILABLE_PAPER_SIZES,
     DEFAULT_OUTER_MARGIN_MM,
     DEFAULT_INNER_MARGIN_MM,
@@ -142,7 +143,7 @@ class PDFMakerApp(tk.Tk):
 
     def __init__(self):
         super().__init__()
-        self.title("複合機 印刷拡縮検証用PDF生成ツール")
+        self.title(f"複合機 印刷拡縮検証用PDF生成ツール (PDFMaker) v{__version__}")
         self.geometry("1020x760")
         self.minsize(880, 640)
 
@@ -961,10 +962,11 @@ class PDFMakerApp(tk.Tk):
     def _show_about(self):
         """Aboutダイアログを表示する。"""
         about_text = (
-            "複合機 印刷拡縮検証用PDF生成ツール v1.0.0\n\n"
+            f"複合機 印刷拡縮検証用PDF生成ツール (PDFMaker) v{__version__}\n\n"
             "Windows 11 オフラインスタンドアロン環境対応\n"
             "JIS規格B列寸法・高精度ベクター描画対応\n\n"
-            "【オープンソースライセンス】\n"
+            "【ライセンス】\n"
+            "・PDFMaker: MIT License\n"
             "・ReportLab PDF Library (BSD License)\n"
             "  Copyright (c) 2000-2025, ReportLab Inc.\n"
             "・Python Standard Library (PSF License)\n"

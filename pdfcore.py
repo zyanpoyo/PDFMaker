@@ -17,8 +17,11 @@ from reportlab.pdfbase import pdfdoc, pdfmetrics
 from reportlab.pdfgen import canvas
 
 
+__version__ = "1.0.0"
+
 # ==============================================================================
 # 用紙サイズ定義 (ミリメートル単位・JIS規格厳密指定)
+
 # ==============================================================================
 PAPER_SIZES_MM: dict[str, tuple[float, float]] = {
     "A3": (297.0, 420.0),
@@ -401,7 +404,7 @@ def generate_pdf(
     # PDFドキュメントメタデータ設定
     c.setTitle("Print Scale Calibration Sheet")
     c.setAuthor("PDFMaker")
-    c.setCreator("PDFMaker")
+    c.setCreator(f"PDFMaker v{__version__}")
     c.setSubject("Printer scale and margin calibration")
 
     # 印刷時自動拡縮の抑止設定

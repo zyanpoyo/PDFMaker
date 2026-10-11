@@ -7,6 +7,7 @@ import pytest
 from pypdf import PdfReader
 
 from pdfcore import (
+    __version__,
     PAPER_SIZES_MM,
     PageConfig,
     generate_pdf,
@@ -181,3 +182,18 @@ def test_config_json_export_and_import():
         assert loaded_pages[1].landscape is True
         assert loaded_pages[1].outer_margin_mm == 1.0
         assert loaded_pages[1].inner_margin_mm == 40.0
+
+
+def test_version_and_pdf_metadata():
+    """__version__ が設定され、生成PDFのメタデータ（Creator）に反映されることを検証。"""
+    assert __version__ == "1.0.0"
+
+    pages = [PageConfig(size="A4", landscape=False, outer_margin_mm=0.5, inner_margin_mm=50.0)]
+    with tempfile.TemporaryDirectory() as tmpdir:
+        pdf_path = str(Path(tmpdir) / "test_version.pdf")
+        generate_pdf(pages, pdf_path)
+
+        reader = PdfReader(pdf_path)
+        assert reader.metadata is not None
+        assert f"PDFMaker v{__version__}" in reader.metadata.creator
+
