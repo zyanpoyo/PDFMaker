@@ -126,5 +126,8 @@ python -m PyInstaller --onefile --noconsole --clean --icon=app.ico --add-data "a
 
 ## 7. ライセンス
 
-- **ReportLab PDF Library**: BSD License (Copyright © 2000-2025, ReportLab Inc.)
-- **Python Standard Library**: Python Software Foundation License
+- **PDFMaker 本ツール**: [MIT License](LICENSE)
+- **サードパーティ・依存ライブラリ**:
+  - **ReportLab PDF Library**: BSD License (Copyright © 2000-2025, ReportLab Inc.)
+  - **Python Standard Library**: Python Software Foundation License
+
